@@ -5,7 +5,7 @@ requireRole('student', '../login.php');
 
 $uid = $_SESSION['user_id'];
 
-/* ── Counts for sidebar badges ── */
+/* ── Sidebar badges ── */
 $unreadNotif = $pdo->prepare("SELECT COUNT(*) FROM notifications WHERE user_id=? AND is_read=0");
 $unreadNotif->execute([$uid]); $unreadNotif = $unreadNotif->fetchColumn();
 
@@ -354,7 +354,7 @@ function appendBubble(side, text, time, tick) {
   const chatEl = document.getElementById('chat-messages');
   if (!chatEl) return;
 
-  // Remove "start conversation" placeholder if present
+
   const placeholder = chatEl.querySelector('[data-placeholder]');
   if (placeholder) placeholder.remove();
 
