@@ -1,10 +1,3 @@
--- ============================================================
--- UniEventHub - Complete Database Schema
--- Import this single file in phpMyAdmin
--- Includes: users, events, registrations, feedback,
---           notifications, messages
--- ============================================================
-
 CREATE DATABASE IF NOT EXISTS unieventhub
     CHARACTER SET utf8mb4
     COLLATE utf8mb4_unicode_ci;
@@ -100,9 +93,3 @@ CREATE TABLE IF NOT EXISTS messages (
     INDEX idx_msg_convo    (sender_id, receiver_id)
 );
 
--- ============================================================
--- AFTER IMPORTING:
--- Visit http://localhost/unieventhub/setup.php to create
--- default admin and organizer accounts.
--- DELETE setup.php immediately after running it!
--- ============================================================
