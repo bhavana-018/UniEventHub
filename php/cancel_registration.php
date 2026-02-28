@@ -1,5 +1,5 @@
 <?php
-// php/cancel_registration.php
+
 require_once '../includes/db.php';
 require_once '../includes/auth.php';
 
