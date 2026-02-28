@@ -1,5 +1,4 @@
 <?php
-// setup.php - Run once to create default accounts. DELETE after use!
 require_once 'includes/db.php';
 
 // Check if already set up
