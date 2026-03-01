@@ -1,7 +1,4 @@
 <?php
-// php/poll_messages.php
-// Called every 4 seconds by the chat page via setInterval
-// Returns any new messages received after the last known message ID
 header('Content-Type: application/json');
 require_once '../includes/db.php';
 require_once '../includes/auth.php';
@@ -17,8 +14,6 @@ if (!$withId) {
     exit;
 }
 
-// Fetch only messages newer than the last known ID
-// that were sent TO the current user (received messages)
 $stmt = $pdo->prepare("
     SELECT
         m.id,
@@ -36,8 +31,6 @@ $stmt = $pdo->prepare("
 ");
 $stmt->execute([$withId, $myId, $lastId]);
 $rows = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
-// Mark these new messages as read now that user has seen them
 if (!empty($rows)) {
     $pdo->prepare("
         UPDATE messages
@@ -46,12 +39,11 @@ if (!empty($rows)) {
     ")->execute([$withId, $myId, $lastId]);
 }
 
-// Format for JavaScript
 $formatted = [];
 foreach ($rows as $row) {
     $formatted[] = [
         'id'      => (int)$row['id'],
-        'raw'     => $row['message'],                                      // unescaped, used by appendBubble
+        'raw'     => $row['message'],                                      
         'message' => htmlspecialchars($row['message'], ENT_QUOTES, 'UTF-8'),
         'time'    => date('g:i A', strtotime($row['sent_at'])),
         'initial' => strtoupper($row['initial']),
