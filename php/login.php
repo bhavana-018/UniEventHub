@@ -1,5 +1,4 @@
 <?php
-// php/login.php
 header('Content-Type: application/json');
 require_once '../includes/db.php';
 require_once '../includes/auth.php';
@@ -26,7 +25,6 @@ if (!$user || !password_verify($password, $user['password'])) {
     exit;
 }
 
-// Start session
 if (session_status() === PHP_SESSION_NONE) session_start();
 session_regenerate_id(true);
 
