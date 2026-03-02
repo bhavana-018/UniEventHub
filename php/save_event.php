@@ -1,5 +1,4 @@
 <?php
-// php/save_event.php - Create or Update events
 require_once '../includes/db.php';
 require_once '../includes/auth.php';
 
