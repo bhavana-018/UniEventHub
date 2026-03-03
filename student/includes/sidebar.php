@@ -1,7 +1,4 @@
 <?php
-// student/includes/sidebar.php
-// Requires: $user, $unreadNotif, $unreadMsg, $activePage
-// activePage: 'dashboard'|'events'|'my-registrations'|'messages'|'notifications'|'profile'
 $initials = strtoupper(substr($user['full_name'], 0, 1));
 ?>
 <aside class="sidebar" id="sidebar">
