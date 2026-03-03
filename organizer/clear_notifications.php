@@ -1,6 +1,4 @@
 <?php
-// php/clear_notifications.php
-// Returns JSON — called via fetch() from all notification pages
 header('Content-Type: application/json');
 require_once '../includes/db.php';
 require_once '../includes/auth.php';
