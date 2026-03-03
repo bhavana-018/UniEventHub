@@ -1,7 +1,4 @@
 <?php
-// admin/includes/sidebar.php
-// Requires: $user, $unreadNotif, $unreadMsg, $pendingEvts, $activePage
-// activePage: 'dashboard'|'events'|'users'|'reports'|'messages'|'notifications'
 $initials = strtoupper(substr($user['full_name'], 0, 1));
 ?>
 <aside class="sidebar" id="sidebar">
