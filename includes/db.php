@@ -1,9 +1,8 @@
 <?php
-// includes/db.php - Database Connection
 
 define('DB_HOST', 'localhost');
-define('DB_USER', 'root');        // Change to your MySQL username
-define('DB_PASS', '');            // Change to your MySQL password
+define('DB_USER', 'root');       
+define('DB_PASS', '');            
 define('DB_NAME', 'unieventhub');
 
 try {
