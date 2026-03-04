@@ -1,5 +1,4 @@
 <?php
-// includes/auth.php - Authentication Helpers
 
 require_once __DIR__ . '/db.php';
 
